@@ -60,6 +60,8 @@ The first demo should prove that every important step is visible and easy to ins
 ## Repository documents
 
 - [Business Context](docs/business-context.md)
+- [Architecture](docs/architecture.md)
+- [Data Model](docs/data-model.md)
 - [Roadmap](docs/roadmap.md)
 - [Showcase Plan](docs/showcase-plan.md)
 - [Design Gallery](docs/design-gallery.md)
