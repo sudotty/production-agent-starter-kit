@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#f7f8fa"/>
+  <rect x="60" y="60" width="1080" height="600" rx="24" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="96" y="120" font-family="Arial" font-size="34" font-weight="700" fill="#24292f">Production Agent Starter Kit</text>
+  <text x="96" y="160" font-family="Arial" font-size="18" fill="#57606a">Run List → Run Detail → Step Timeline → Model Output → Review Point → Final Note</text>
+  <g font-family="Arial" font-size="18" fill="#24292f">
+    <rect x="96" y="220" width="160" height="92" rx="14" fill="#f6f8fa" stroke="#d0d7de"/><text x="142" y="272">Runs</text>
+    <rect x="296" y="220" width="160" height="92" rx="14" fill="#f6f8fa" stroke="#d0d7de"/><text x="340" y="272">Detail</text>
+    <rect x="496" y="220" width="160" height="92" rx="14" fill="#f6f8fa" stroke="#d0d7de"/><text x="534" y="272">Steps</text>
+    <rect x="696" y="220" width="160" height="92" rx="14" fill="#f6f8fa" stroke="#d0d7de"/><text x="742" y="272">Review</text>
+    <rect x="896" y="220" width="160" height="92" rx="14" fill="#f6f8fa" stroke="#d0d7de"/><text x="946" y="272">Note</text>
+  </g>
+  <text x="96" y="410" font-family="Arial" font-size="22" font-weight="700" fill="#24292f">Showcase value</text>
+  <text x="96" y="450" font-family="Arial" font-size="18" fill="#57606a">Make one AI workflow inspectable from start to finish.</text>
+  <text x="96" y="500" font-family="Arial" font-size="18" fill="#57606a">Strong demo point: runtime state, step timeline, and quality note are visible.</text>
+</svg>
