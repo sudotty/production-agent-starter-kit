@@ -1,3 +1,4 @@
+# DexRecover bootstrap validation
 name: DexRecover CI
 
 on:
