@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, fields
 
 
 @dataclass(frozen=True, slots=True)
@@ -12,9 +12,10 @@ class RecoverySignals:
     runtime_class_coverage: float
 
     def validate(self) -> None:
-        for name, value in self.__dict__.items():
+        for item in fields(self):
+            value = getattr(self, item.name)
             if not 0.0 <= value <= 1.0:
-                raise ValueError(f"{name} must be between 0 and 1")
+                raise ValueError(f"{item.name} must be between 0 and 1")
 
 
 WEIGHTS = {
