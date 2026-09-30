@@ -1,0 +1,21 @@
+{
+  "format": 1,
+  "tools": [
+    {
+      "name": "clsdumper",
+      "version": "PIN_ME",
+      "source": "https://github.com/TheQmaks/clsdumper",
+      "commit": "PIN_ME",
+      "sha256": null,
+      "trust_state": "unverified"
+    },
+    {
+      "name": "phantom-frida",
+      "version": "PIN_ME",
+      "source": "https://github.com/TheQmaks/phantom-frida",
+      "commit": "PIN_ME",
+      "sha256": null,
+      "trust_state": "unverified"
+    }
+  ]
+}
