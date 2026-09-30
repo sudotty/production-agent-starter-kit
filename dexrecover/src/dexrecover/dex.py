@@ -55,7 +55,15 @@ def inspect_dex(path: str | Path) -> DexArtifact:
     header_file_size = struct.unpack_from("<I", header, 32)[0]
     header_size = struct.unpack_from("<I", header, 36)[0]
 
-    if header_size not in (0x70, 0x78):
+    if magic_bytes.startswith(DEX_PREFIX):
+        header_ok = header_size == 0x70
+    else:
+        # Compact DEX headers vary from standard DEX. Keep v0.1 validation
+        # conservative: reject impossible sizes without pretending to fully
+        # validate every CompactDex header revision.
+        header_ok = 0x70 <= header_size <= size
+
+    if not header_ok:
         return DexArtifact(
             str(p),
             sha,
