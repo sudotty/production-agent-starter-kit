@@ -1,0 +1,51 @@
+name: Traceforge CI
+
+on:
+  push:
+    branches: [traceforge-bootstrap]
+    paths:
+      - "traceforge/**"
+      - ".github/workflows/traceforge-ci.yml"
+  pull_request:
+    paths:
+      - "traceforge/**"
+      - ".github/workflows/traceforge-ci.yml"
+
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: traceforge
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install
+        run: python -m pip install -e .
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: CLI smoke
+        run: |
+          traceforge adapters
+          traceforge plan-demo
+          traceforge init \
+            --db /tmp/traceforge-ci.db \
+            --name ci-lab \
+            --authorization "CI-owned synthetic test mission"
+          traceforge score \
+            --classes 1 \
+            --methods 0.8 \
+            --packages 1 \
+            --entrypoints 0.9 \
+            --semantic 0.8 \
+            --native 0.1
